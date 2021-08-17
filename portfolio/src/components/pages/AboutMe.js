@@ -39,7 +39,7 @@ function AboutMe({opacity}){
         <IntroduceContents>
           안녕하세요. <br /> FrontEnd 한승재입니다. <br />
           FullStack을 넘어 모든분야를 공부하는 개발자가 꿈입니다. <br />
-          15살 나이에 C언어를 처음 접하며 테트리스와 같은 게임을 만들며 개발해왔습니다. <br />
+          15살에 C언어를 처음 접하며 테트리스와 같은 게임을 만들며 개발해왔습니다. <br />
           취업때문에 기계공학으로 대학을 진학해 4.34이란 학점으로 졸업했습니다. <br />
           개발을 이어나갔고 결국 제가 이루고 싶은 개발자로 진로를 변경해 꿈을 이루고 있습니다. <br />
           꾸준함, 노력이란 재능을 타고나 어떤 공부도 포기하지 않고 열심히 할 자신이 있습니다. 
@@ -107,23 +107,26 @@ const IntroduceWrap= styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 const IntroduceTitle = styled.h1`
   font-family: 'Noto Sans KR';
   font-size: 40px;
   font-weight: 600;
-  color:#548CA8;
+  color:#FF2626;
   margin: 10px 0px;
+  width: 100%;
 `
 const IntroduceContents = styled.p`
   font-family: 'Noto Sans KR';
   font-size: 20px;
   font-weight: 100;
-  color:#EEEEEE;
-  margin: 0px 10px;
+  color:#000000;
+  margin: 10px 10px;
+  text-align: center;
 `
 const Line = styled.div`
-  background-color: #548CA8;
+  background-color: #FF2626;
   height: 1px;
   width: 90%;
   margin: 20px 0px;
@@ -137,13 +140,14 @@ const TechStackTitle = styled.p`
   font-family: 'Noto Sans KR';
   font-size: 30px;
   font-weight: 300;
-  color:#548CA8;
+  color:#FF2626;
   margin: 0px 10px;
 `
 const TechWrap = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 const TechEle = styled.div`
   display: flex;
@@ -151,7 +155,7 @@ const TechEle = styled.div`
   align-items: center;
   width: 100px;
   margin: 10px;
-  color:#EEEEEE;
+  color:#000000;
 `
 const TechImage = styled.img`
   width: 80px;
