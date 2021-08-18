@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import My from '../../asset/my_picture.jpg'
 
 import JS from '../../asset/js.png'
 import TS from '../../asset/typescript.png';
@@ -31,19 +32,30 @@ import Docker from '../../asset/Docker.png';
 
 function AboutMe({opacity}){
   return (
-    <Wrap>
+    <Wrap id='AboutMe'>
       <IntroduceWrap>
         <IntroduceTitle>
           Introduce
         </IntroduceTitle>
+        <IntroduceContentsWrap>
+          <MyImage src={My}>
+          </MyImage>
+          <Information>
+            <p>이름 : 한승재</p>
+            <p>생년월일 : 1996.08.14</p>
+            <p>학력 : 삼육대학교 컴퓨터 메카트로닉스 공학부</p>
+            <p>이메일 : seungjae08@gmail.com</p>
+            <p>github : <a href='https://github.com/seungjae08'>seungjae github</a></p>
+          </Information>
+        </IntroduceContentsWrap>
         <IntroduceContents>
-          안녕하세요. <br /> FrontEnd 한승재입니다. <br />
-          FullStack을 넘어 모든분야를 공부하는 개발자가 꿈입니다. <br />
-          15살에 C언어를 처음 접하며 테트리스와 같은 게임을 만들며 개발해왔습니다. <br />
-          취업때문에 기계공학으로 대학을 진학해 4.34이란 학점으로 졸업했습니다. <br />
-          개발을 이어나갔고 결국 제가 이루고 싶은 개발자로 진로를 변경해 꿈을 이루고 있습니다. <br />
-          꾸준함, 노력이란 재능을 타고나 어떤 공부도 포기하지 않고 열심히 할 자신이 있습니다. 
-        </IntroduceContents>
+            안녕하세요. <br /> FrontEnd 한승재입니다. <br />
+            FullStack을 넘어 모든분야를 공부하는 개발자가 꿈입니다. <br />
+            15살에 C언어를 처음 접하며 테트리스와 같은 게임을 만들며 개발해왔습니다. <br />
+            취업때문에 기계공학으로 대학을 진학해 4.34이란 학점으로 졸업했습니다. <br />
+            개발을 이어나갔고 결국 제가 이루고 싶은 개발자로 진로를 변경해 꿈을 이루고 있습니다. <br />
+            꾸준함, 노력이란 재능을 타고나 어떤 공부도 포기하지 않고 열심히 할 자신이 있습니다. 
+          </IntroduceContents>
       </IntroduceWrap>
       <Line />
       <TechStack>
@@ -113,20 +125,31 @@ const IntroduceTitle = styled.h1`
   font-family: 'Noto Sans KR';
   font-size: 40px;
   font-weight: 600;
-  color:#FF2626;
+  color:#C9D6DF;
   margin: 10px 0px;
   width: 100%;
 `
 const IntroduceContents = styled.p`
   font-family: 'Noto Sans KR';
   font-size: 20px;
-  font-weight: 100;
-  color:#000000;
-  margin: 10px 10px;
+  font-weight: 500;
+  color:#1E2022;
+  margin: 30px 10px;
   text-align: center;
 `
+const Information = styled.div`
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-weight: 700;
+  color:#1E2022;
+  margin: 30px 10px;
+`
 const Line = styled.div`
-  background-color: #FF2626;
+  background-color: #C9D6DF;
   height: 1px;
   width: 90%;
   margin: 20px 0px;
@@ -140,7 +163,7 @@ const TechStackTitle = styled.p`
   font-family: 'Noto Sans KR';
   font-size: 30px;
   font-weight: 300;
-  color:#FF2626;
+  color:#C9D6DF;
   margin: 0px 10px;
 `
 const TechWrap = styled.div`
@@ -165,5 +188,20 @@ const TechImage = styled.img`
   transition: all 0.2s ease-in;
   &:hover{
     transform: scale(1.5);
+  }
+`
+const MyImage = styled.img`
+  height: 345px;
+  border-radius: 30px;
+`
+const IntroduceContentsWrap = styled.div`
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 768px){
+    display: flex;
+    flex-direction: column;
   }
 `

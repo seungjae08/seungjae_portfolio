@@ -24,20 +24,28 @@ function FirstSection (){
   },[])
   useEffect(()=>{
     if(scroll>0){
-      if(scroll>firstSection){
+      if(scroll>firstSection-1 ){
         setHeader(true)
       }else{
         setHeader(false)
       }
     }
-  },[scroll])
+  },[firstSection, scroll])
   return (
     <Wrap id='scrollEvent'>
+      <MaxWidthWrap>
       <Options header={header}>
-        <MtButton onClick={()=>{}}>
+        <MtButton onClick={()=>{
+          const aboutEle = document.getElementById('first')
+          window.scrollTo(0,aboutEle.clientHeight - 50)
+        }}>
           <img src={Me} alt="About Me"></img>
         </MtButton>
-        <MtButton onClick={()=>{}}>
+        <MtButton onClick={()=>{
+          const aboutEle = document.getElementById('first')
+          const aboutProtFolio = document.getElementById('AboutMe')
+          window.scrollTo(0,aboutEle.clientHeight+aboutProtFolio.clientHeight)
+        }}>
           <img src={Portfolio} alt="About Me"></img>
         </MtButton>
         <MtButton onClick={()=>{}}>
@@ -67,6 +75,12 @@ function FirstSection (){
       </ContentsWrap>
       <AboutMe />
       <AboutPortfolio />
+      <Footer>
+        <p>
+          Copyright © 2021 | All rights reserved. | Seungjae Han
+        </p>
+      </Footer>
+      </MaxWidthWrap>
     </Wrap>
   )
 }
@@ -79,10 +93,14 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFE6E6;
+  background-color: #F0F5F9;
+  scroll-behavior: smooth;
+`
+const MaxWidthWrap = styled.div`
+  width: 100%;
 `
 const ContentsWrap =styled.div`
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -102,7 +120,7 @@ const ContentFirst = styled.p`
   font-family: 'Noto Sans KR';
   font-size: 20px;
   font-weight: 600;
-  color:#FF2626;
+  color:#C9D6DF;
   margin: 10px 0px;
 `
 const ContentSeconds = styled.p`
@@ -135,7 +153,7 @@ const Options = styled.div`
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease-in;
-  background-color: ${({header})=>header?"rgba( 0, 0, 0, 0.5 )":"none"};
+  background-color: ${({header})=>header?"rgba( 0, 0, 0, 0.8 )":"none"};
 `
 const MtButton = styled(Button)`
   width: 30px;
@@ -148,4 +166,18 @@ const RenderPage = styled.div`
   border-radius: 20px;
   background-color: #476072;
   overflow: scroll;
+`
+const Footer = styled.div`
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    font-family: 'Noto Sans KR';
+    font-size: 8px;
+    font-weight: 300;
+    color:#111111;
+    text-align: center;
+  }
 `
